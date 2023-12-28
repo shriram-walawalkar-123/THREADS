@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Posts</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <h1>Twitter</h1>
+    <br/>
+    <h2>Highlighted posts of the year 2023!</h2>
+    <br/>
+    <% for(post of posts){ %>
+    <div class="post">
+    <h3 class="user">@<%= post.username %></h3>
+    <h3 class="comment"><%= post.comment %></h3>
+    <br/>
+    <a href="http://localhost:3000/posts/<%=post.id%>">View all comments</a>
+    </div>
+    <% } %>
+    <br>
+    <br>
+    <a href="http://localhost:3000/posts/new">Upload New Post</a>
+</body>
+</html>

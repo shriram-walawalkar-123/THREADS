@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reply to Comment</title>
+</head>
+<body>
+    <h2>Replying</h2>
+    <p>Comment username : @<%=stmts.username %></p>
+    <form method="POST" action="/posts/<%=stmts.id1%>?_method=PATCH">
+    <textarea rows="10" cols="35" name="comment"><%= stmts.comment %></textarea>
+    <button>Submit</button>
+    </form>
+</body>
+</html>

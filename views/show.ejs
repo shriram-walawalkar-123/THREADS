@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read all comments</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <div class="post">      
+        <h3 class="user">@<%= post.username%></h3>
+        <h4><%=post.comment %></h4>
+    <br/>
+    <br>
+</div>
+<br>
+<h2>Read all the comments of above posts</h2>
+
+<%for(stmts of commentsSee){%>
+<div class="stmts">
+    <h3 class="user">@<%= stmts.username%></h3>
+    <h4><%=stmts.comment %></h4>
+    <a href="http://localhost:3000/posts/<%=stmts.id1%>/edit">Reply</a>
+    <form method="POST" action="/posts/<%=stmts.id1%>?_method=Delete">
+    <br/>
+    <button>Delete the comment</button>
+    </form>
+</div>
+<% } %>
+</body>
+</html>
